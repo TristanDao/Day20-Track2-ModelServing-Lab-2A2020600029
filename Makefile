@@ -2,9 +2,9 @@
 ## llama.cpp throughout. No Docker. Cross-platform via 00-setup/*.
 
 VENV     := .venv
-PY       := $(VENV)/bin/python
-PIP      := $(VENV)/bin/pip
-LOCUST   := $(VENV)/bin/locust
+PY       := $(shell if [ -f $(VENV)/bin/python ]; then echo $(VENV)/bin/python; else echo python3; fi)
+PIP      := $(shell if [ -f $(VENV)/bin/pip ]; then echo $(VENV)/bin/pip; else echo pip; fi)
+LOCUST   := $(shell if [ -f $(VENV)/bin/locust ]; then echo $(VENV)/bin/locust; else echo locust; fi)
 
 # Detect OS for setup target. macOS, Linux, anything-else (Windows users use the .ps1 directly).
 OS := $(shell uname -s 2>/dev/null || echo Unknown)

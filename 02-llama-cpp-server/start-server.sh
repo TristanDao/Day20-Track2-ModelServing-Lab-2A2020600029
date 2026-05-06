@@ -25,4 +25,5 @@ exec python -m llama_cpp.server \
     --host 0.0.0.0 --port 8080 \
     --n_threads "$THREADS" \
     --n_gpu_layers "$GPU_LAYERS" \
-    --n_ctx "$CTX"
+    --n_ctx "$CTX" \
+    --metrics
