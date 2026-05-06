@@ -11,12 +11,16 @@ echo "==> Day 20 lab setup (Linux)"
 echo "    repo: $LAB_ROOT"
 
 # 1. Python virtualenv
-if [[ ! -d .venv ]]; then
-  echo "==> Creating .venv"
-  python3 -m venv .venv
+if [[ "${SKIP_VENV:-0}" != "1" ]]; then
+  if [[ ! -d .venv ]]; then
+    echo "==> Creating .venv"
+    python3 -m venv .venv
+  fi
+  # shellcheck source=/dev/null
+  source .venv/bin/activate
+else
+  echo "==> Skipping .venv (using current environment)"
 fi
-# shellcheck source=/dev/null
-source .venv/bin/activate
 
 echo "==> Upgrading pip"
 python -m pip install --upgrade pip wheel >/dev/null

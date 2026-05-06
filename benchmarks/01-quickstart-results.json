@@ -1,0 +1,36 @@
+{
+  "primary": {
+    "label": "primary (Q4_K_M)",
+    "model_path": "models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf",
+    "n_threads": 8,
+    "n_ctx": 2048,
+    "n_batch": 512,
+    "n_gpu_layers": 99,
+    "load_ms": 2762.9,
+    "ttft_ms_p50": 528.1,
+    "ttft_ms_p95": 832.6,
+    "tpot_ms_p50": 137.34,
+    "tpot_ms_p95": 151.86,
+    "e2e_ms_p50": 8452.1,
+    "e2e_ms_p95": 10054.6,
+    "e2e_ms_p99": 10379.9,
+    "decode_rate_tok_s": 7.3
+  },
+  "compare": {
+    "label": "compare (Q2_K)",
+    "model_path": "models/tinyllama-1.1b-chat-v1.0.Q2_K.gguf",
+    "n_threads": 8,
+    "n_ctx": 2048,
+    "n_batch": 512,
+    "n_gpu_layers": 99,
+    "load_ms": 940.3,
+    "ttft_ms_p50": 675.4,
+    "ttft_ms_p95": 878.9,
+    "tpot_ms_p50": 102.5,
+    "tpot_ms_p95": 117.17,
+    "e2e_ms_p50": 6560.1,
+    "e2e_ms_p95": 7094.5,
+    "e2e_ms_p99": 7113.8,
+    "decode_rate_tok_s": 9.8
+  }
+}
